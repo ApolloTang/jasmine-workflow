@@ -1,1 +1,3 @@
-$();
+$.fn.styleWords = function(){
+    //
+}
