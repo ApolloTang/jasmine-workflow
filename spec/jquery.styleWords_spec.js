@@ -11,6 +11,8 @@ describe("jQuery.styleWords", function(){
     });
 
     it("Plug-in should be chainable", function(){
+        console.log($frag.styleWords().html());
+        console.log($frag.html());
         expect( $frag.styleWords() ).toBe( $frag );
     });
 
