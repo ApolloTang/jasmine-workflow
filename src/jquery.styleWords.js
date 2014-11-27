@@ -1,3 +1,2 @@
 $.fn.styleWords = function(){
-    //
 }
