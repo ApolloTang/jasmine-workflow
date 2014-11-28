@@ -1,5 +1,7 @@
 $.fn.styleWords = function(numWords){
 
+    numWords = numWords || 1;
+
     return this.each(function() {
 
         var $el = $(this);
