@@ -14,4 +14,15 @@ describe("jQuery.styleWords", function(){
         expect( $frag.styleWords() ).toBe( $frag );
     });
 
+    it("There should now be a span tag in html", function(){
+        expect( $frag.styleWords().find('span').length).toBe( 1 );
+    });
+
+    it("Within the span there should only be one word by default", function(){
+        expect( $frag.styleWords().find('span').text()).toBe('FirstWord');
+    });
+
+    it("Alow users to specify the nuber of words to wrap in span", function(){
+        expect( $frag.styleWords(3).find('span').text()).toBe('FirstWord secondWord thirdWord');
+    });
 })
