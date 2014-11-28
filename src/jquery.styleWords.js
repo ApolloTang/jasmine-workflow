@@ -1,6 +1,6 @@
 $.fn.styleWords = function(){
-    return this.each(function() {
 
+    var testThis = this.each(function() {
         var $el = $(this);
 
         // put all word in array
@@ -16,7 +16,9 @@ $.fn.styleWords = function(){
             return  [firstWord_inSpan].concat(words).join(' ');
         });
 
-
     });
+
+    debugger;
+    return testThis;
 }
 
