@@ -19,7 +19,7 @@ describe("jQuery.styleWords", function(){
     });
 
     it("Within the span there should only be one word by default", function(){
-        expect( $frag.styleWords().find('span').text()).toBe('FirstWord');
+        expect( $frag.styleWords(1).find('span').text()).toBe('FirstWord');
     });
 
     it("Alow users to specify the nuber of words to wrap in span", function(){

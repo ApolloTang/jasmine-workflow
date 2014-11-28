@@ -1,4 +1,4 @@
-$.fn.styleWords = function(){
+$.fn.styleWords = function(numWords){
 
     return this.each(function() {
 
@@ -7,18 +7,19 @@ $.fn.styleWords = function(){
         $el.html(function(){
 
             // put all word in array
-            var words = $el.text().split(' ');
+            var words_Array = $el.text().split(' ');
 
-            // place the first word in span tag and wrap it in jQuery object
+            // place 'numWords' of words in span tag and wrap it in jQuery object
             // words array now is one word less
-            var $firstWord_inSpan = $('<span>').text(words.shift());
+            var wordsToPutInSpan_Array =  words_Array.splice(0, numWords);
+            var wordsToPutInSpan =  wordsToPutInSpan_Array.join(' ');
+            var $words_inSpan = $('<span>').text(wordsToPutInSpan);
 
-            // strip the jQuery wrap to get string
-            firstWord_inSpan = $('<temp-wrapper>').append($firstWord_inSpan).html();
+            // strip the jQuery wrapper to get string
+            words_inSpan = $('<temp-wrapper>').append($words_inSpan).html();
 
-            var allText_1stWordInSpan =  [firstWord_inSpan].concat(words).join(' ');
-
-            return allText_1stWordInSpan;
+            var result =  [words_inSpan].concat(words_Array).join(' ');
+            return result;
 
         });
 
